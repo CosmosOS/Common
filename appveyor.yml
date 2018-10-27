@@ -1,0 +1,19 @@
+version: 0.20150918.{build}
+image: Visual Studio 2017
+configuration: Debug
+platform: Any CPU
+shallow_clone: true
+clone_folder: c:\Common
+
+nuget:
+  account_feed: false
+  project_feed: true
+  disable_publish_on_pr: true
+
+build_script:
+  - cmd: msbuild "Common.sln" /t:Restore;Build;Pack /maxcpucount /verbosity:normal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+test: off
+
+artifacts:
+  - path: 'artifacts\Debug\nupkg\*.nupkg'
