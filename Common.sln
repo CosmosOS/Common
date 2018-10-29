@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Targets", "Targets", "{B809
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Build.Common", "source\Cosmos.Build.Common\Cosmos.Build.Common.csproj", "{9D0F61EB-2DC1-4DA1-A518-52941C237C85}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{008D41A3-3E20-4E93-AC75-28D4A8F5721F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Build.Common.Tests", "tests\Cosmos.Build.Common.Tests\Cosmos.Build.Common.Tests.csproj", "{3FC10DCD-6DD5-4CE4-87E3-722BAE7754C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{9D0F61EB-2DC1-4DA1-A518-52941C237C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D0F61EB-2DC1-4DA1-A518-52941C237C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D0F61EB-2DC1-4DA1-A518-52941C237C85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FC10DCD-6DD5-4CE4-87E3-722BAE7754C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FC10DCD-6DD5-4CE4-87E3-722BAE7754C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FC10DCD-6DD5-4CE4-87E3-722BAE7754C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FC10DCD-6DD5-4CE4-87E3-722BAE7754C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B9B1C468-05AE-4F2E-B380-183C54F09652} = {D9C56F86-6C41-43A2-B501-60B3E5C02603}
 		{B8097007-F8B9-4F1F-A99A-C51F087EE634} = {B9B1C468-05AE-4F2E-B380-183C54F09652}
+		{3FC10DCD-6DD5-4CE4-87E3-722BAE7754C1} = {008D41A3-3E20-4E93-AC75-28D4A8F5721F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7D38725-20DB-44F3-8033-76C8A96E3F9D}
