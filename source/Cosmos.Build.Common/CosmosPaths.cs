@@ -48,7 +48,7 @@ namespace Cosmos.Build.Common
             }
             Build = CheckPath(UserKit, @"Build");
             Tools = CheckPath(UserKit, @"Build\Tools");
-            GdbClientExe = CheckPath(UserKit, @"Build\VSIP\Cosmos.Debug.GDB.exe");
+            //GdbClientExe = CheckPath(UserKit, @"Build\VSIP\Cosmos.Debug.GDB.exe");
             DebugStubSrc = CheckPath(UserKit, @"XSharp\DebugStub");
 
             // Not finding this ones is not an issue. We will fallback to already retrieved stub from UserKit
@@ -59,7 +59,7 @@ namespace Cosmos.Build.Common
                     DevKit = (string) xReg.GetValue("DevKit");
                     try
                     {
-                        DebugStubSrc = CheckPath(DevKit, @"source\Cosmos.Core.DebugStub");
+                        DebugStubSrc = CheckPath(DevKit, @"..\IL2CPU\source\Cosmos.Core.DebugStub");
                     }
                     catch
                     {
