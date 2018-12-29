@@ -11,15 +11,19 @@
     <PropertyGroup>
         <Authors>Cosmos</Authors>
         <Copyright>Copyright © 2007-$([System.DateTime]::Now.Year) COSMOS Project</Copyright>
-		<!--
+        <!--
         <PackageIconUrl>https://github.com/CosmosOS/Common/raw/master/Common.ico</PackageIconUrl>
         -->
         <PackageProjectUrl>https://www.gocosmos.org</PackageProjectUrl>
-        <PackageLicenseUrl>https://github.com/CosmosOS/Common/raw/master/LICENSE.txt</PackageLicenseUrl>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
         <PackageTags>Cosmos OS Operating System .NET C# VB VB.NET F#</PackageTags>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/CosmosOS/Common</RepositoryUrl>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="$(RepoRoot)LICENSE.txt" Pack="True" PackagePath="$(PackageLicenseFile)" Visible="False" />
+    </ItemGroup>
 
 </Project>
