@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net471</TargetFramework>
+        <TargetFramework>net461</TargetFramework>
         <PackageDescription>Property pages implementation for Visual Studio CPS-based project systems.</PackageDescription>
         <PackageTags>VS Visual Studio Property Pages CPS WPF Windows Forms WinForms X# XSharp Cosmos</PackageTags>
         <IsPackable>True</IsPackable>
@@ -9,6 +9,7 @@
         <IncludeWindowsFormsReferences>True</IncludeWindowsFormsReferences>
         <MicrosoftBuildVersion>15.3.409</MicrosoftBuildVersion>
         <MicrosoftVisualStudioProjectSystemVersion>15.3.224</MicrosoftVisualStudioProjectSystemVersion>
+        <MicrosoftVisualStudioShell150Version>15.0.26606</MicrosoftVisualStudioShell150Version>
     </PropertyGroup>
 
     <ItemGroup>
@@ -18,7 +19,7 @@
         <PackageReference Include="Microsoft.VisualStudio.OLE.Interop" />
         <PackageReference Include="Microsoft.VisualStudio.ProjectSystem" />
         <PackageReference Include="Microsoft.VisualStudio.ProjectSystem.Analyzers" PrivateAssets="All" />
-        <PackageReference Include="Microsoft.VisualStudio.Shell.15.0" Version="15.0.26606" />
+        <PackageReference Include="Microsoft.VisualStudio.Shell.15.0" />
         <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" PrivateAssets="All" />
     </ItemGroup>
 

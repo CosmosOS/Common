@@ -10,6 +10,7 @@
         <MicrosoftVisualStudioOleInteropVersion>7.10.6071</MicrosoftVisualStudioOleInteropVersion>
         <MicrosoftVisualStudioProjectSystemVersion>15.8.243</MicrosoftVisualStudioProjectSystemVersion>
         <MicrosoftVisualStudioSdkEmbedInteropTypesVersion>15.0.27</MicrosoftVisualStudioSdkEmbedInteropTypesVersion>
+        <MicrosoftVisualStudioShell150Version>15.8.28010</MicrosoftVisualStudioShell150Version>
         <MicrosoftVisualStudioThreadingAnalyzersVersion>15.8.209</MicrosoftVisualStudioThreadingAnalyzersVersion>
         <MicrosoftVSSDKBuildToolsVersion>15.9.3032</MicrosoftVSSDKBuildToolsVersion>
         <MSTestVersion>1.4.0</MSTestVersion>
