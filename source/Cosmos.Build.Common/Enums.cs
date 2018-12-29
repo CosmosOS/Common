@@ -50,14 +50,6 @@ namespace Cosmos.Build.Common
         Mono
     }
 
-    public enum LogSeverityEnum : byte
-    {
-        Warning = 0,
-        Error = 1,
-        Informational = 2,
-        Performance = 3
-    }
-
     public enum TraceAssemblies
     {
         None = 0,

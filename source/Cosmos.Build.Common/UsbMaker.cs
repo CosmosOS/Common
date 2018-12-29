@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
+﻿using System.Diagnostics;
 using System.IO;
 
 namespace Cosmos.Build.Common
 {
-    public class UsbMaker
+    public static class UsbMaker
     {
         static public void Generate(string aDrive, string aKernelFile)
         {

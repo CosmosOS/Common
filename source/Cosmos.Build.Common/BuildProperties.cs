@@ -367,7 +367,7 @@ namespace Cosmos.Build.Common
             }
         }
 
-        public String OutputPath => GetProperty("OutputPath", @"bin\debug");
+        public string OutputPath => GetProperty("OutputPath", @"bin\debug");
 
         public Framework Framework
         {
@@ -381,7 +381,7 @@ namespace Cosmos.Build.Common
             }
         }
 
-        public Boolean UseInternalAssembler
+        public bool UseInternalAssembler
         {
             get
             {

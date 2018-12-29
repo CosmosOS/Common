@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.ProjectSystem;
 
@@ -88,8 +89,10 @@ namespace VSPropertyPages
         protected void OnPropertyChanged(string propertyName) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
+        [SuppressMessage("Style", "VSTHRD200:Use \"Async\" suffix for async methods")]
         private void WaitForAsync(Func<Task> asyncFunc) => _projectThreadingService.ExecuteSynchronously(asyncFunc);
 
+        [SuppressMessage("Style", "VSTHRD200:Use \"Async\" suffix for async methods")]
         private T WaitForAsync<T>(Func<Task<T>> asyncFunc) => _projectThreadingService.ExecuteSynchronously(asyncFunc);
 
         private void OnPropertyChanged(params string[] propertyNames)

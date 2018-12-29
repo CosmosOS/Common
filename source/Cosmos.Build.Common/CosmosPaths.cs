@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using Microsoft.Win32;
 
@@ -13,7 +12,7 @@ namespace Cosmos.Build.Common
         public static readonly string GdbClientExe;
         //
         public static readonly string DevKit = null;
-        public static string DebugStubSrc;
+        public static readonly string DebugStubSrc;
 
         static string CheckPath(string aPath1, string aPath2)
         {

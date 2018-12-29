@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -263,8 +264,10 @@ namespace VSPropertyPages
 
         #endregion
 
+        [SuppressMessage("Style", "VSTHRD200:Use \"Async\" suffix for async methods")]
         private void WaitForAsync(Func<Task> asyncFunc) => _projectThreadingService.ExecuteSynchronously(asyncFunc);
 
+        [SuppressMessage("Style", "VSTHRD200:Use \"Async\" suffix for async methods")]
         private T WaitForAsync<T>(Func<Task<T>> asyncFunc) => _projectThreadingService.ExecuteSynchronously(asyncFunc);
 
         private void PropertyChanging(object sender, ProjectPropertyChangingEventArgs e)

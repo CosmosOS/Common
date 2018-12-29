@@ -1,12 +1,10 @@
-﻿using System;
-using System.IO;
-using System.Text;
+﻿using System.IO;
 
 namespace Cosmos.Build.Common
 {
-    public class IsoMaker
+    public static class IsoMaker
     {
-        static public string Generate(string imageFile, string isoFilename)
+        public static string Generate(string imageFile, string isoFilename)
         {
             var destinationDirectory = Path.GetDirectoryName(imageFile);
 
@@ -47,10 +45,9 @@ namespace Cosmos.Build.Common
             return output;
         }
 
-        protected static string Quote(string location)
+        private static string Quote(string location)
         {
             return '"' + location + '"';
         }
-
     }
 }
