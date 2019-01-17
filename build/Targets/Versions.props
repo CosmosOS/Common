@@ -2,7 +2,6 @@
 
     <PropertyGroup>
         <EnvDteVersion>8.0.2</EnvDteVersion>
-        <RoslynAnalyzersVersion>2.6.2</RoslynAnalyzersVersion>
         <MicrosoftBuildVersion>15.9.20</MicrosoftBuildVersion>
         <MicrosoftNETFrameworkReferenceAssembliesVersion>1.0.0-alpha-004</MicrosoftNETFrameworkReferenceAssembliesVersion>
         <MicrosoftNETTestSdkVersion>15.9.0</MicrosoftNETTestSdkVersion>
@@ -14,6 +13,7 @@
         <MicrosoftVisualStudioThreadingAnalyzersVersion>15.8.209</MicrosoftVisualStudioThreadingAnalyzersVersion>
         <MicrosoftVSSDKBuildToolsVersion>15.9.3032</MicrosoftVSSDKBuildToolsVersion>
         <MSTestVersion>1.4.0</MSTestVersion>
+        <RoslynAnalyzersVersion>2.6.3</RoslynAnalyzersVersion>
     </PropertyGroup>
 
 </Project>
