@@ -4,14 +4,14 @@
         <EnvDteVersion>8.0.2</EnvDteVersion>
         <MicrosoftBuildVersion>15.9.20</MicrosoftBuildVersion>
         <MicrosoftNETFrameworkReferenceAssembliesVersion>1.0.0-alpha-004</MicrosoftNETFrameworkReferenceAssembliesVersion>
-        <MicrosoftNETTestSdkVersion>15.9.0</MicrosoftNETTestSdkVersion>
+        <MicrosoftNETTestSdkVersion>16.0.1</MicrosoftNETTestSdkVersion>
         <MicrosoftVisualStudioManagedInterfacesVersion>8.0.50728</MicrosoftVisualStudioManagedInterfacesVersion>
         <MicrosoftVisualStudioOleInteropVersion>7.10.6071</MicrosoftVisualStudioOleInteropVersion>
         <MicrosoftVisualStudioProjectSystemVersion>15.8.243</MicrosoftVisualStudioProjectSystemVersion>
         <MicrosoftVisualStudioSdkEmbedInteropTypesVersion>15.0.27</MicrosoftVisualStudioSdkEmbedInteropTypesVersion>
         <MicrosoftVisualStudioShell150Version>15.9.28307</MicrosoftVisualStudioShell150Version>
         <MicrosoftVisualStudioThreadingAnalyzersVersion>16.0.102</MicrosoftVisualStudioThreadingAnalyzersVersion>
-        <MicrosoftVSSDKBuildToolsVersion>15.9.3039</MicrosoftVSSDKBuildToolsVersion>
+        <MicrosoftVSSDKBuildToolsVersion>16.1.42</MicrosoftVSSDKBuildToolsVersion>
         <MSTestVersion>1.4.0</MSTestVersion>
         <RoslynAnalyzersVersion>2.6.3</RoslynAnalyzersVersion>
     </PropertyGroup>
