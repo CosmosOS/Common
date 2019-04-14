@@ -19,8 +19,4 @@
         <PackageReference Update="MSTest.TestFramework" Version="$(MSTestVersion)" />
     </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Update="@(RoslynAnalyzer)" Version="$(RoslynAnalyzersVersion)" />
-    </ItemGroup>
-
 </Project>

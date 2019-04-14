@@ -13,7 +13,6 @@
         <MicrosoftVisualStudioThreadingAnalyzersVersion>16.0.102</MicrosoftVisualStudioThreadingAnalyzersVersion>
         <MicrosoftVSSDKBuildToolsVersion>16.1.42</MicrosoftVSSDKBuildToolsVersion>
         <MSTestVersion>1.4.0</MSTestVersion>
-        <RoslynAnalyzersVersion>2.6.3</RoslynAnalyzersVersion>
     </PropertyGroup>
 
 </Project>
