@@ -3,7 +3,7 @@
     <PropertyGroup>
         <EnvDteVersion>8.0.2</EnvDteVersion>
         <MicrosoftBuildVersion>16.0.461</MicrosoftBuildVersion>
-        <MicrosoftNETFrameworkReferenceAssembliesVersion>1.0.0-alpha-004</MicrosoftNETFrameworkReferenceAssembliesVersion>
+        <MicrosoftNETFrameworkReferenceAssembliesVersion>1.0.0-preview.1</MicrosoftNETFrameworkReferenceAssembliesVersion>
         <MicrosoftNETTestSdkVersion>16.0.1</MicrosoftNETTestSdkVersion>
         <MicrosoftVisualStudioManagedInterfacesVersion>8.0.50728</MicrosoftVisualStudioManagedInterfacesVersion>
         <MicrosoftVisualStudioOleInteropVersion>7.10.6071</MicrosoftVisualStudioOleInteropVersion>
