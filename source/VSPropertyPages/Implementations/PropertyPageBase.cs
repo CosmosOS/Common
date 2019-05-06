@@ -68,7 +68,7 @@ namespace VSPropertyPages
             _propertyPageUI.Activate(hWndParent, rect, modal);
         }
 
-        public void Deactivate() => _propertyPageUI.Deactivate();
+        public void Deactivate() => _propertyPageUI?.Deactivate();
 
         public void GetPageInfo(PROPPAGEINFO[] pPageInfo)
         {
