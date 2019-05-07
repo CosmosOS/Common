@@ -1,19 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net461;net472</TargetFrameworks>
+        <TargetFrameworks>net472</TargetFrameworks>
         <PackageDescription>Property pages implementation for Visual Studio CPS-based project systems.</PackageDescription>
         <PackageTags>VS Visual Studio Property Pages CPS WPF Windows Forms WinForms X# XSharp Cosmos</PackageTags>
         <IsPackable>True</IsPackable>
         <IncludeWpfReferences>True</IncludeWpfReferences>
         <IncludeWindowsFormsReferences>True</IncludeWindowsFormsReferences>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(TargetFramework)' == 'net461'">
-        <MicrosoftBuildVersion>15.3.409</MicrosoftBuildVersion>
-        <MicrosoftVisualStudioProjectSystemVersion>15.3.224</MicrosoftVisualStudioProjectSystemVersion>
-        <MicrosoftVisualStudioShell150Version>15.0.26606</MicrosoftVisualStudioShell150Version>
-        <MicrosoftVisualStudioShellFrameworkVersion>15.0.26606</MicrosoftVisualStudioShellFrameworkVersion>
     </PropertyGroup>
 
     <ItemGroup>
