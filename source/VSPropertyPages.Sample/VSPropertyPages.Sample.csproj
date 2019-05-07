@@ -4,7 +4,7 @@
     <Import Project="$(BaseIntermediateOutputPath)*.nuget.g.props" Condition="'$(MSBuildProjectExtension)' == '.tmp_proj' OR $(MSBuildProjectName.EndsWith('wpftmp'))" />
 
     <PropertyGroup>
-        <TargetFramework>net471</TargetFramework>
+        <TargetFramework>net472</TargetFramework>
         <UseCodebase>True</UseCodebase>
         <IsVsixProject>True</IsVsixProject>
     </PropertyGroup>
