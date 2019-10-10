@@ -29,7 +29,9 @@ namespace Cosmos.Build.Common
         [Description("Intel Edison")]
         IntelEdison,
         [Description("Hyper-V")]
-        HyperV
+        HyperV,
+        [Description("Qemu")]
+        Qemu
     }
 
     public enum VMwareEdition
