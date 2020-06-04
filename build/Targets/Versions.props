@@ -12,7 +12,7 @@
         <MicrosoftVisualStudioShell150Version>16.0.28729</MicrosoftVisualStudioShell150Version>
         <MicrosoftVisualStudioShellFrameworkVersion>16.0.28729</MicrosoftVisualStudioShellFrameworkVersion>
         <MicrosoftVisualStudioThreadingAnalyzersVersion>16.0.102</MicrosoftVisualStudioThreadingAnalyzersVersion>
-        <MicrosoftVSSDKBuildToolsVersion>16.1.42</MicrosoftVSSDKBuildToolsVersion>
+        <MicrosoftVSSDKBuildToolsVersion>16.6.2051</MicrosoftVSSDKBuildToolsVersion>
         <MSTestVersion>1.4.0</MSTestVersion>
     </PropertyGroup>
 
