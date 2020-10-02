@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <EnvDteVersion>8.0.2</EnvDteVersion>
-        <MicrosoftBuildVersion>16.0.461</MicrosoftBuildVersion>
+        <MicrosoftBuildVersion>16.7.0</MicrosoftBuildVersion>
         <MicrosoftNETFrameworkReferenceAssembliesVersion>1.0.0</MicrosoftNETFrameworkReferenceAssembliesVersion>
         <MicrosoftNETTestSdkVersion>16.0.1</MicrosoftNETTestSdkVersion>
         <MicrosoftVisualStudioManagedInterfacesVersion>8.0.50728</MicrosoftVisualStudioManagedInterfacesVersion>
