@@ -144,7 +144,7 @@ namespace Cosmos.Build.Common
                 Description = "Use Hyper-V to deploy and debug.";
                 Deployment = DeploymentType.ISO;
                 Launch = LaunchType.HyperV;
-                VisualStudioDebugPort = @"Pipe: Cosmos\Serial";
+                VisualStudioDebugPort = @"Pipe: CosmosSerial";
             }
         }
 
