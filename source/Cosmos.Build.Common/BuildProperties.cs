@@ -114,8 +114,7 @@ namespace Cosmos.Build.Common
             }
             else if (aName == "PXE")
             {
-                Description =
-                    "Creates a PXE setup and hosts a DCHP and TFTP server to deploy directly to physical hardware. Allows debugging with a serial cable.";
+                Description = "Creates a PXE setup and hosts a DCHP and TFTP server to deploy directly to physical hardware. Allows debugging with a serial cable.";
                 Deployment = DeploymentType.PXE;
                 Launch = LaunchType.None;
 
@@ -125,6 +124,13 @@ namespace Cosmos.Build.Common
                 Description = "Use Bochs emulator to deploy and debug.";
                 Deployment = DeploymentType.ISO;
                 Launch = LaunchType.Bochs;
+                VisualStudioDebugPort = @"Pipe: Cosmos\Serial";
+            }
+            else if (aName == "Qemu")
+            {
+                Description = "Use Qemu emulator to deploy and debug.";
+                Deployment = DeploymentType.ISO;
+                Launch = LaunchType.Qemu;
                 VisualStudioDebugPort = @"Pipe: Cosmos\Serial";
             }
             else if (aName == "IntelEdison")
@@ -354,6 +360,30 @@ namespace Cosmos.Build.Common
             }
         }
 
+        public bool EnableBochsDebug
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.EnableBochsDebugString, false);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.EnableBochsDebugString, value);
+            }
+        }
+
+        public bool StartBochsDebugGui
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.StartBochsDebugGui, false);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.StartBochsDebugGui, value);
+            }
+        }
+
         // VMware
         public VMwareEdition VMwareEdition
         {
@@ -426,30 +456,6 @@ namespace Cosmos.Build.Common
             set
             {
                 SetProperty(BuildPropertyNames.StartCosmosGDBString, value);
-            }
-        }
-
-        public bool EnableBochsDebug
-        {
-            get
-            {
-                return GetProperty(BuildPropertyNames.EnableBochsDebugString, false);
-            }
-            set
-            {
-                SetProperty(BuildPropertyNames.EnableBochsDebugString, value);
-            }
-        }
-
-        public bool StartBochsDebugGui
-        {
-            get
-            {
-                return GetProperty(BuildPropertyNames.StartBochsDebugGui, false);
-            }
-            set
-            {
-                SetProperty(BuildPropertyNames.StartBochsDebugGui, value);
             }
         }
 
