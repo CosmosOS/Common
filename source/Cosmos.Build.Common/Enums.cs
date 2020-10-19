@@ -26,12 +26,12 @@ namespace Cosmos.Build.Common
         Slave,
         [Description("Bochs")]
         Bochs,
+        [Description("Qemu")]
+        Qemu,
         [Description("Intel Edison")]
         IntelEdison,
         [Description("Hyper-V")]
-        HyperV,
-        [Description("Qemu")]
-        Qemu
+        HyperV
     }
 
     public enum VMwareEdition
