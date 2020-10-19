@@ -146,13 +146,6 @@ namespace Cosmos.Build.Common
                 Launch = LaunchType.HyperV;
                 VisualStudioDebugPort = @"Pipe: Cosmos\Serial";
             }
-            else if (aName == "Qemu")
-            {
-                Description = "Use Qemu emulator to deploy and debug.";
-                Deployment = DeploymentType.ISO;
-                Launch = LaunchType.Qemu;
-                VisualStudioDebugPort = @"Pipe: Cosmos\Serial";
-            }
         }
 
         public void DeleteProfile(string aPrefix)
