@@ -46,7 +46,7 @@ namespace Cosmos.Build.Common
             IsDirty = true;
         }
 
-        public void SetProperty(string name, Object value)
+        public void SetProperty(string name, object value)
         {
             SetProperty(name, value.ToString());
         }

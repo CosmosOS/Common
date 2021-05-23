@@ -19,6 +19,18 @@
         <PackageReference Include="Microsoft.VisualStudio.Shell.15.0" />
         <PackageReference Include="Microsoft.VisualStudio.Shell.Framework" />
         <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" PrivateAssets="All" />
+        <PackageReference Include="System.Threading.Tasks.Dataflow" Version="4.9.0" />
     </ItemGroup>
 
+    <Target Name="GetCopyToOutputDirectoryItems" />
+    <Target Name="SGenFilesOutputGroupDependencies" />
+    <Target Name="SGenFilesOutputGroup" />
+    <Target Name="SatelliteDllsProjectOutputGroupDependencies" />
+    <Target Name="SatelliteDllsProjectOutputGroup" />
+    <Target Name="DocumentationProjectOutputGroupDependencies" />
+    <Target Name="DocumentationProjectOutputGroup" />
+    <Target Name="DebugSymbolsProjectOutputGroupDependencies" />
+    <Target Name="DebugSymbolsProjectOutputGroup" />
+    <Target Name="BuiltProjectOutputGroupDependencies" />
+    <Target Name="BuiltProjectOutputGroup" />
 </Project>
