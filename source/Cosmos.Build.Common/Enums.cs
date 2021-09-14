@@ -62,6 +62,7 @@ namespace Cosmos.Build.Common
 
     public enum DebugMode
     {
+        None,
         IL,
         Source
     }
