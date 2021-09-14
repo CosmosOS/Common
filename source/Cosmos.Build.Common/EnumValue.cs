@@ -36,7 +36,7 @@ namespace Cosmos.Build.Common
 
         public static EnumValue Find(System.Collections.IEnumerable items, Enum value)
         {
-            foreach (Object item in items)
+            foreach (object item in items)
             {
                 if (item is EnumValue)
                 {
