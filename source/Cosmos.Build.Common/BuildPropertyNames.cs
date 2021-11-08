@@ -32,5 +32,6 @@ namespace Cosmos.Build.Common
         public const string BinFormatString = "BinFormat";
         public const string IsoFileString = "ISOFile";
         public const string CompileVBEMultiboot = "CompileVBEMultiboot";
+        public const string VBEResolution = "VBEResolution";
     }
 }

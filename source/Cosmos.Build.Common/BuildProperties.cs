@@ -488,5 +488,20 @@ namespace Cosmos.Build.Common
                 SetProperty(BuildPropertyNames.CompileVBEMultiboot, value);
             }
         }
+
+        /// <summary>
+        /// Set VBE Resolution
+        /// </summary>
+        public string VBEResolution
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.VBEResolution, "800x600x32");
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.VBEResolution, value);
+            }
+        }
     }
 }
