@@ -31,5 +31,6 @@ namespace Cosmos.Build.Common
         public const string StartBochsDebugGui = "StartBochsDebugGui";
         public const string BinFormatString = "BinFormat";
         public const string IsoFileString = "ISOFile";
+        public const string CompileVBEMultiboot = "CompileVBEMultiboot";
     }
 }
