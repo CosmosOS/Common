@@ -473,5 +473,35 @@ namespace Cosmos.Build.Common
                 SetProperty(BuildPropertyNames.BinFormatString, value);
             }
         }
+
+        /// <summary>
+        /// Compile with VBE specified in multiboot structure.
+        /// </summary>
+        public bool CompileVBEMultiboot
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.CompileVBEMultiboot, false);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.CompileVBEMultiboot, value);
+            }
+        }
+
+        /// <summary>
+        /// Set VBE Resolution
+        /// </summary>
+        public string VBEResolution
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.VBEResolution, "800x600x32");
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.VBEResolution, value);
+            }
+        }
     }
 }
