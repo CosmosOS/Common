@@ -2,17 +2,13 @@
 
     <PropertyGroup>
         <EnvDteVersion>8.0.2</EnvDteVersion>
-        <MicrosoftBuildVersion>16.7.0</MicrosoftBuildVersion>
+        <MicrosoftBuildVersion>17.0.0</MicrosoftBuildVersion>
         <MicrosoftNETFrameworkReferenceAssembliesVersion>1.0.0</MicrosoftNETFrameworkReferenceAssembliesVersion>
         <MicrosoftNETTestSdkVersion>16.0.1</MicrosoftNETTestSdkVersion>
+        <MicrosoftVisualStudioSdkVersion>17.0.31902.203</MicrosoftVisualStudioSdkVersion>
         <MicrosoftVisualStudioManagedInterfacesVersion>8.0.50728</MicrosoftVisualStudioManagedInterfacesVersion>
-        <MicrosoftVisualStudioOleInteropVersion>7.10.6071</MicrosoftVisualStudioOleInteropVersion>
-        <MicrosoftVisualStudioProjectSystemVersion>16.0.374-pre</MicrosoftVisualStudioProjectSystemVersion>
-        <MicrosoftVisualStudioSdkEmbedInteropTypesVersion>15.0.27</MicrosoftVisualStudioSdkEmbedInteropTypesVersion>
-        <MicrosoftVisualStudioShell150Version>16.0.28729</MicrosoftVisualStudioShell150Version>
-        <MicrosoftVisualStudioShellFrameworkVersion>16.0.28729</MicrosoftVisualStudioShellFrameworkVersion>
         <MicrosoftVisualStudioThreadingAnalyzersVersion>16.0.102</MicrosoftVisualStudioThreadingAnalyzersVersion>
-        <MicrosoftVSSDKBuildToolsVersion>16.6.2051</MicrosoftVSSDKBuildToolsVersion>
+        <MicrosoftVSSDKBuildToolsVersion>17.0.5232</MicrosoftVSSDKBuildToolsVersion>
         <MSTestVersion>1.4.0</MSTestVersion>
     </PropertyGroup>
 
