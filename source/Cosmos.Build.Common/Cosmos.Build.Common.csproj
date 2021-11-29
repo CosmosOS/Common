@@ -2,9 +2,9 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-		<IsPackable>True</IsPackable>
-		<Configurations>Debug;Release;</Configurations>
-		<Platforms>AnyCPU;x86</Platforms>
+        <IsPackable>True</IsPackable>
+        <Configurations>Debug;Release;</Configurations>
+        <Platforms>AnyCPU;x86</Platforms>
     </PropertyGroup>
 
     <ItemGroup>
