@@ -20,7 +20,7 @@ namespace Cosmos.Build.Common
             var buildISO = Path.Combine(CosmosPaths.Build, "ISO");
 
             Copy(buildISO + "/boot/", isoDirectory + "/boot/");
-            File.Copy(imageFile, Path.Combine(isoDirectory + "/boot/", "CosmosKernel1.bin"));
+            File.Copy(imageFile, Path.Combine(isoDirectory + "/boot/", "Cosmos.bin"));
 
             string arg =
                 "-relaxed-filenames" +
