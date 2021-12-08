@@ -19,18 +19,14 @@ namespace Cosmos.Build.Common
 
             var buildISO = Path.Combine(CosmosPaths.Build, "ISO");
 
-            File.Copy(Path.Combine(buildISO, "isolinux.bin"), Path.Combine(isoDirectory, "isolinux.bin"));
-            File.Copy(Path.Combine(buildISO, "mboot.c32"), Path.Combine(isoDirectory, "mboot.c32"));
-            File.Copy(Path.Combine(buildISO, "syslinux.cfg"), Path.Combine(isoDirectory, "syslinux.cfg"));
-            File.Copy(Path.Combine(buildISO, "ldlinux.c32"), Path.Combine(isoDirectory, "ldlinux.c32"));
-            File.Copy(Path.Combine(buildISO, "libcom32.c32"), Path.Combine(isoDirectory, "libcom32.c32"));
-            File.Copy(imageFile, Path.Combine(isoDirectory, "Cosmos.bin"));
+            Copy(buildISO + "/boot/", isoDirectory + "/boot/");
+            File.Copy(imageFile, Path.Combine(isoDirectory + "/boot/", "Cosmos.bin"));
 
             string arg =
                 "-relaxed-filenames" +
                 " -J -R" +
                 " -o " + Quote(isoFilename) +
-                " -b isolinux.bin" +
+                " -b boot/grub/i386-pc/eltorito.img" +
                 " -no-emul-boot" +
                 " -boot-load-size 4" +
                 " -boot-info-table " +
@@ -43,6 +39,21 @@ namespace Cosmos.Build.Common
             );
 
             return output;
+        }
+
+        private static void Copy(string sourceDir, string targetDir)
+        {
+            Directory.CreateDirectory(targetDir);
+
+            foreach (var file in Directory.GetFiles(sourceDir))
+            {
+                File.Copy(file, Path.Combine(targetDir, Path.GetFileName(file)));
+            }
+
+            foreach (var directory in Directory.GetDirectories(sourceDir))
+            {
+                Copy(directory, Path.Combine(targetDir, Path.GetFileName(directory)));
+            }
         }
 
         private static string Quote(string location)
