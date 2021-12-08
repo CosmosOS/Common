@@ -503,5 +503,20 @@ namespace Cosmos.Build.Common
                 SetProperty(BuildPropertyNames.VBEResolution, value);
             }
         }
+
+        /// <summary>
+        /// Set VBE Resolution
+        /// </summary>
+        public bool ExtractMapFile
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.ExtractMapFile, false);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.ExtractMapFile, value);
+            }
+        }
     }
 }
