@@ -73,7 +73,7 @@ namespace Cosmos.Build.Common
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
             }
         }
@@ -90,7 +90,7 @@ namespace Cosmos.Build.Common
                     if (null == runCommandRegistryKey) { return; }
                     string commandLine = (string)runCommandRegistryKey.GetValue(null, null);
                     if (null != commandLine) { commandLine = commandLine.Trim(); }
-                    if (string.IsNullOrEmpty(commandLine)) { return; }
+                    if (String.IsNullOrEmpty(commandLine)) { return; }
                     // Now perform some parsing on command line to discover full exe path.
                     string candidateFilePath;
                     int commandLineLength = commandLine.Length;
@@ -112,7 +112,7 @@ namespace Cosmos.Build.Common
                         int firstSeparatorIndex = 0;
                         for (; firstSeparatorIndex < commandLineLength; firstSeparatorIndex++)
                         {
-                            if (char.IsSeparator(commandLine[firstSeparatorIndex])) { break; }
+                            if (Char.IsSeparator(commandLine[firstSeparatorIndex])) { break; }
                         }
                         if (firstSeparatorIndex >= commandLineLength) { return; }
                         candidateFilePath = commandLine.Substring(0, firstSeparatorIndex);

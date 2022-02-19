@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Runtime.InteropServices;
 using Microsoft.Win32;
 
 namespace Cosmos.Build.Common
@@ -30,40 +31,61 @@ namespace Cosmos.Build.Common
 
         static CosmosPaths()
         {
-            using (var baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32))
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                using (var xReg = baseKey.OpenSubKey(@"Software\Cosmos", false))
+                using (var baseKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32))
                 {
-                    if (xReg == null)
+                    using (var xReg = baseKey.OpenSubKey(@"Software\Cosmos", false))
                     {
-                        throw new Exception(@"HKEY_LOCAL_MACHINE\SOFTWARE\Cosmos was not found.");
-                    }
-                    UserKit = (string) xReg.GetValue("UserKit");
-                    if (null == UserKit)
-                    {
-                        throw new Exception(@"HKEY_LOCAL_MACHINE\SOFTWARE\Cosmos\@UserKit was not found but UserKit must be installed!");
+                        if (xReg == null)
+                        {
+                            throw new Exception(@"HKEY_LOCAL_MACHINE\SOFTWARE\Cosmos was not found.");
+                        }
+                        UserKit = (string)xReg.GetValue("UserKit");
+                        if (null == UserKit)
+                        {
+                            throw new Exception(@"HKEY_LOCAL_MACHINE\SOFTWARE\Cosmos\@UserKit was not found but UserKit must be installed!");
+                        }
                     }
                 }
             }
+            else
+            {
+                UserKit = File.ReadAllText("/etc/CosmosUserKit.cfg").Replace("\n","") + "/";
+                Console.WriteLine("userkit: " + UserKit);
+            }
+
             Build = CheckPath(UserKit, @"Build");
-            Tools = CheckPath(UserKit, @"Build\Tools");
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                Tools = CheckPath(UserKit, @"Build/Tools");
+            }
+
             //GdbClientExe = CheckPath(UserKit, @"Build\VSIP\Cosmos.Debug.GDB.exe");
-            DebugStubSrc = CheckPath(UserKit, @"XSharp\DebugStub");
+            DebugStubSrc = CheckPath(UserKit, @"XSharp/DebugStub");
 
             // Not finding this ones is not an issue. We will fallback to already retrieved stub from UserKit
-            using (var xReg = Registry.CurrentUser.OpenSubKey(@"Software\Cosmos", false))
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                if (xReg != null)
+                using (var xReg = Registry.CurrentUser.OpenSubKey(@"Software/Cosmos", false))
                 {
-                    DevKit = (string) xReg.GetValue("DevKit");
-                    try
+                    if (xReg != null)
                     {
-                        DebugStubSrc = CheckPath(DevKit, @"..\IL2CPU\source\Cosmos.Core.DebugStub");
-                    }
-                    catch
-                    {
+                        DevKit = (string)xReg.GetValue("DevKit");
+                        try
+                        {
+                            DebugStubSrc = CheckPath(DevKit, @"..\IL2CPU\source\Cosmos.Core.DebugStub");
+                        }
+                        catch
+                        {
+                        }
                     }
                 }
+            }
+            else
+            {
+                //TODO
             }
         }
 
@@ -72,6 +94,7 @@ namespace Cosmos.Build.Common
         /// exceptions.</summary>
         public static void Initialize()
         {
+
         }
     }
 }
