@@ -40,85 +40,9 @@ namespace Cosmos.Build.Common
         /// QemuConfigFile.</summary>
         private static void FindQemuExe()
         {
-            // try
-            // {
-            //     using (var runCommandRegistryKey =
-            //         Registry.ClassesRoot.OpenSubKey(@"QemuConfigFile\shell\Run\command", false))
-            //     {
-            //         if (null == runCommandRegistryKey)
-            //         {
-            //             return;
-            //         }
-
-            //         string commandLine = (string) runCommandRegistryKey.GetValue(null, null);
-            //         if (null != commandLine)
-            //         {
-            //             commandLine = commandLine.Trim();
-            //         }
-
-            //         if (string.IsNullOrEmpty(commandLine))
-            //         {
-            //             return;
-            //         }
-
-            //         // Now perform some parsing on command line to discover full exe path.
-            //         string candidateFilePath;
-            //         int commandLineLength = commandLine.Length;
-            //         if ('"' == commandLine[0])
-            //         {
-            //             // Seek for a non escaped double quote.
-            //             int lastDoubleQuoteIndex = 1;
-            //             for (; lastDoubleQuoteIndex < commandLineLength; lastDoubleQuoteIndex++)
-            //             {
-            //                 if ('"' != commandLine[lastDoubleQuoteIndex])
-            //                 {
-            //                     continue;
-            //                 }
-
-            //                 if ('\\' != commandLine[lastDoubleQuoteIndex - 1])
-            //                 {
-            //                     break;
-            //                 }
-            //             }
-
-            //             if (lastDoubleQuoteIndex >= commandLineLength)
-            //             {
-            //                 return;
-            //             }
-
-            //             candidateFilePath = commandLine.Substring(1, lastDoubleQuoteIndex - 1);
-            //         }
-            //         else
-            //         {
-            //             // Seek for first separator character.
-            //             int firstSeparatorIndex = 0;
-            //             for (; firstSeparatorIndex < commandLineLength; firstSeparatorIndex++)
-            //             {
-            //                 if (char.IsSeparator(commandLine[firstSeparatorIndex]))
-            //                 {
-            //                     break;
-            //                 }
-            //             }
-
-            //             if (firstSeparatorIndex >= commandLineLength)
-            //             {
-            //                 return;
-            //             }
-
-            //             candidateFilePath = commandLine.Substring(0, firstSeparatorIndex);
-            //         }
-
-            //         if (!File.Exists(candidateFilePath))
-            //         {
-            //             return;
-            //         }
-
-            //         QemuExe = new FileInfo(candidateFilePath);
-            //     }
-            // }
-            // catch
-            // {
-            // }
+           
+        QemuExe = new FileInfo(@"C:\qemu\qemu-system-i386.exe");
+   
         }
     }
 }
