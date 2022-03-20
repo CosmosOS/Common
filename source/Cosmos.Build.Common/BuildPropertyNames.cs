@@ -33,5 +33,6 @@ namespace Cosmos.Build.Common
         public const string IsoFileString = "ISOFile";
         public const string CompileVBEMultiboot = "CompileVBEMultiboot";
         public const string VBEResolution = "VBEResolution";
+        public const string QemuLocation = "QemuLocationParameters";
     }
 }

@@ -132,6 +132,7 @@ namespace Cosmos.Build.Common
                 Deployment = DeploymentType.ISO;
                 Launch = LaunchType.Qemu;
                 VisualStudioDebugPort = @"Pipe: Cosmos\Serial";
+                QemuLocation = @"C:\qemu\qemu-system-i386";
             }
             else if (aName == "IntelEdison")
             {
@@ -313,6 +314,18 @@ namespace Cosmos.Build.Common
             set
             {
                 SetProperty(BuildPropertyNames.VisualStudioDebugPortString, value);
+            }
+        }
+
+        public string QemuLocation
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuLocation, "C:\\qemu\\qemu-system-i386");
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuLocation, value);
             }
         }
 
