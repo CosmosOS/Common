@@ -133,6 +133,10 @@ namespace Cosmos.Build.Common
                 Launch = LaunchType.Qemu;
                 VisualStudioDebugPort = @"Pipe: Cosmos\Serial";
                 QemuLocation = @"C:\qemu\qemu-system-i386";
+                QemuNetworkDevice = "PCNet";
+                QemuMemoryAmount = "512";
+                QemuAudioDevice = "SoundBlaster16";
+                QemuVideoDevice = "VMWare";
             }
             else if (aName == "IntelEdison")
             {
@@ -348,6 +352,50 @@ namespace Cosmos.Build.Common
             set
             {
                 SetProperty(BuildPropertyNames.QemuUseCustom, value);
+            }
+        }
+        public string QemuNetworkDevice
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuNetworkDevice);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuNetworkDevice, value);
+            }
+        }
+        public string QemuMemoryAmount
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuMemory);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuMemory, value);
+            }
+        }
+        public string QemuVideoDevice
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuVideoDriver);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuVideoDriver, value);
+            }
+        }
+        public string QemuAudioDevice
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuAudioDriver);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuAudioDriver, value);
             }
         }
         // PXE

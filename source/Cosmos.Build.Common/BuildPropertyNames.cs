@@ -43,5 +43,6 @@ namespace Cosmos.Build.Common
         public const string QemuUSBKeyboard = "QemuUSBKeyboard";
         public const string QemuNetworkDevice = "QemuNetworkDevice";
         public const string QemuMemory = "QemuMemory";
+        public const string QemuHWAccel = "QemuHWAccel";
     }
 }
