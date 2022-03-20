@@ -328,7 +328,28 @@ namespace Cosmos.Build.Common
                 SetProperty(BuildPropertyNames.QemuLocation, value);
             }
         }
-
+        public string QemuCustomArguments
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuCustomArguments);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuCustomArguments, value);
+            }
+        }
+        public string QemuUseCustomArguments
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuUseCustom);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuUseCustom, value);
+            }
+        }
         // PXE
         public string PxeInterface
         {

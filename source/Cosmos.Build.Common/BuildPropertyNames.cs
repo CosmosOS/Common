@@ -34,5 +34,14 @@ namespace Cosmos.Build.Common
         public const string CompileVBEMultiboot = "CompileVBEMultiboot";
         public const string VBEResolution = "VBEResolution";
         public const string QemuLocation = "QemuLocationParameters";
+        public const string QemuCustomArguments = "QemuCustomParameters";
+        public const string QemuUseCustom = "QemuUseCustomParameters";
+        public const string QemuSerial = "QemuUseSerial";
+        public const string QemuAudioDriver = "QemuAudioDriver";
+        public const string QemuVideoDriver = "QemuVideoDriver";
+        public const string QemuUSBMouse = "QemuUSBMouse";
+        public const string QemuUSBKeyboard = "QemuUSBKeyboard";
+        public const string QemuNetworkDevice = "QemuNetworkDevice";
+        public const string QemuMemory = "QemuMemory";
     }
 }
