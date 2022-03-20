@@ -44,5 +44,6 @@ namespace Cosmos.Build.Common
         public const string QemuNetworkDevice = "QemuNetworkDevice";
         public const string QemuMemory = "QemuMemory";
         public const string QemuHWAccel = "QemuHWAccel";
+        public const string QemuUseCustomLocation = "QemuUseCustomLocation";
     }
 }

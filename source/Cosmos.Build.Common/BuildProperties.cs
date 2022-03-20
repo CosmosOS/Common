@@ -132,7 +132,7 @@ namespace Cosmos.Build.Common
                 Deployment = DeploymentType.ISO;
                 Launch = LaunchType.Qemu;
                 VisualStudioDebugPort = @"Pipe: Cosmos\Serial";
-                QemuLocation = @"C:\qemu\qemu-system-i386";
+                QemuLocation = @"C:\qemu\qemu-system-i386.exe";
                 QemuNetworkDevice = "PCNet";
                 QemuMemoryAmount = "512";
                 QemuAudioDevice = "SoundBlaster16";
