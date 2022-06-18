@@ -518,5 +518,161 @@ namespace Cosmos.Build.Common
                 SetProperty(BuildPropertyNames.ExtractMapFile, value);
             }
         }
+
+        public string QemuMemory
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuMemoryString, "512");
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuMemoryString, value);
+            }
+        }
+
+        public bool QemuUseCustomParameters
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuUseCustomParametersString, false);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuUseCustomParametersString, value);
+            }
+        }
+
+        public string QemuCustomParameters
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuCustomParametersString, "");
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuCustomParametersString, value);
+            }
+        }
+
+        public bool QemuHWAccel
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuHWAccelString, false);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuHWAccelString, value);
+            }
+        }
+
+        public bool QemuUSBKeyboard
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuUSBKeyboardString, false);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuUSBKeyboardString, value);
+            }
+        }
+
+        public bool QemuUSBMouse
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuUSBMouseString, false);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuUSBMouseString, value);
+            }
+        }
+
+        public bool QemuUseSerial
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuUseSerialString, false);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuUseSerialString, value);
+            }
+        }
+
+        public string QemuNetworkDevice
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuNetworkDeviceString, "e1000");
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuNetworkDeviceString, value);
+            }
+        }
+
+        public string QemuAudioDriver
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuAudioDriverString, "");
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuAudioDriverString, value);
+            }
+        }
+
+        public string QemuVideoDriver
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuVideoDriverString, "");
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuVideoDriverString, value);
+            }
+        }
+
+        public bool QemuHWAccelWHPX
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuHWAccelWHPXString, false);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuHWAccelWHPXString, value);
+            }
+        }
+
+        public bool QemuUseCustomLocation
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuUseCustomLocationString, false);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuUseCustomLocationString, value);
+            }
+        }
+
+        public string QemuLocationParameters
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.QemuLocationParametersString, "");
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.QemuLocationParametersString, value);
+            }
+        }
     }
 }
