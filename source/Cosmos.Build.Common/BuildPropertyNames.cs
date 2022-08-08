@@ -30,6 +30,7 @@ namespace Cosmos.Build.Common
         public const string EnableBochsDebugString = "EnableBochsDebug";
         public const string StartBochsDebugGui = "StartBochsDebugGui";
         public const string BinFormatString = "BinFormat";
+        public const string CompressionTypeString = "CompressionType";
         public const string IsoFileString = "ISOFile";
         public const string CompileVBEMultiboot = "CompileVBEMultiboot";
         public const string VBEResolution = "VBEResolution";
