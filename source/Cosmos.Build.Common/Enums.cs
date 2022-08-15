@@ -75,6 +75,12 @@ namespace Cosmos.Build.Common
         MethodFooters
     }
 
+    public enum CompressionType
+    {
+        None,
+        Gzip
+    }
+
     public static class EnumHelper
     {
         public static string GetDescription(this Enum value)

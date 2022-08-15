@@ -475,6 +475,21 @@ namespace Cosmos.Build.Common
         }
 
         /// <summary>
+        /// Gets or sets the compression type for the kernel image.
+        /// </summary>
+        public CompressionType CompressionType
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.CompressionTypeString, CompressionType.None);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.CompressionTypeString, value);
+            }
+        }
+
+        /// <summary>
         /// Compile with VBE specified in multiboot structure.
         /// </summary>
         public bool CompileVBEMultiboot
