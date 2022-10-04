@@ -474,19 +474,6 @@ namespace Cosmos.Build.Common
             }
         }
 
-
-        public bool EnableFastBoost
-        {
-            get
-            {
-                return GetProperty(BuildPropertyNames.EnableFastBoost, false);
-            }
-            set
-            {
-                SetProperty(BuildPropertyNames.EnableFastBoost, value);
-            }
-        }
-
         /// <summary>
         /// Gets or sets the compression type for the kernel image.
         /// </summary>
