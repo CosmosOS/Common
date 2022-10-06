@@ -504,6 +504,18 @@ namespace Cosmos.Build.Common
             }
         }
 
+        public bool EnableFastBoost
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.CompileVBEMultiboot, false);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.CompileVBEMultiboot, value);
+            }
+        }
+
         /// <summary>
         /// Set VBE Resolution
         /// </summary>
