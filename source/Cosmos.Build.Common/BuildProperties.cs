@@ -504,15 +504,15 @@ namespace Cosmos.Build.Common
             }
         }
 
-        public bool EnableFastBoost
+        public bool EnableLittleOptimization
         {
             get
             {
-                return GetProperty(BuildPropertyNames.CompileVBEMultiboot, false);
+                return GetProperty(BuildPropertyNames.EnableLittleOptimization, false);
             }
             set
             {
-                SetProperty(BuildPropertyNames.CompileVBEMultiboot, value);
+                SetProperty(BuildPropertyNames.EnableLittleOptimization, value);
             }
         }
 

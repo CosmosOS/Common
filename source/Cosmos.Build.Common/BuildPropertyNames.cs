@@ -33,7 +33,7 @@ namespace Cosmos.Build.Common
         public const string CompressionTypeString = "CompressionType";
         public const string IsoFileString = "ISOFile";
         public const string CompileVBEMultiboot = "CompileVBEMultiboot";
-        public const string EnableFastBoost = "EnableFastBoost";
+        public const string EnableLittleOptimization = "EnableLittleOptimization";
         public const string VBEResolution = "VBEResolution";
         public const string ExtractMapFile = "ExtractMapFile";
         public const string QemuMemoryString = "QemuMemory";
