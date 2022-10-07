@@ -504,15 +504,15 @@ namespace Cosmos.Build.Common
             }
         }
 
-        public bool EnableLittleOptimization
+        public bool RemoveBootDebugOutput
         {
             get
             {
-                return GetProperty(BuildPropertyNames.EnableLittleOptimization, false);
+                return GetProperty(BuildPropertyNames.RemoveBootDebugOutput, false);
             }
             set
             {
-                SetProperty(BuildPropertyNames.EnableLittleOptimization, value);
+                SetProperty(BuildPropertyNames.RemoveBootDebugOutput, value);
             }
         }
 
