@@ -504,6 +504,18 @@ namespace Cosmos.Build.Common
             }
         }
 
+        public bool RemoveBootDebugOutput
+        {
+            get
+            {
+                return GetProperty(BuildPropertyNames.RemoveBootDebugOutput, false);
+            }
+            set
+            {
+                SetProperty(BuildPropertyNames.RemoveBootDebugOutput, value);
+            }
+        }
+
         /// <summary>
         /// Set VBE Resolution
         /// </summary>
