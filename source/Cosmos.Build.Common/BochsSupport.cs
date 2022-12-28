@@ -85,14 +85,24 @@ namespace Cosmos.Build.Common
         {
             try
             {
-                using (var runCommandRegistryKey = Registry.ClassesRoot.OpenSubKey(@"BochsConfigFile\shell\Run\command", false))
+                string candidateFilePath = Environment.GetEnvironmentVariable("BochsPath");
+                if (string.IsNullOrWhiteSpace(candidateFilePath))
                 {
-                    if (null == runCommandRegistryKey) { return; }
-                    string commandLine = (string)runCommandRegistryKey.GetValue(null, null);
-                    if (null != commandLine) { commandLine = commandLine.Trim(); }
-                    if (String.IsNullOrEmpty(commandLine)) { return; }
+                    using var runCommandRegistryKey =
+                        Registry.ClassesRoot.OpenSubKey(@"BochsConfigFile\shell\Run\command", false);
+                    if (null == runCommandRegistryKey)
+                    {
+                        return;
+                    }
+
+                    string commandLine = (string) runCommandRegistryKey.GetValue(null, null);
+                    commandLine = commandLine?.Trim();
+                    if (String.IsNullOrEmpty(commandLine))
+                    {
+                        return;
+                    }
+
                     // Now perform some parsing on command line to discover full exe path.
-                    string candidateFilePath;
                     int commandLineLength = commandLine.Length;
                     if ('"' == commandLine[0])
                     {
@@ -100,10 +110,22 @@ namespace Cosmos.Build.Common
                         int lastDoubleQuoteIndex = 1;
                         for (; lastDoubleQuoteIndex < commandLineLength; lastDoubleQuoteIndex++)
                         {
-                            if ('"' != commandLine[lastDoubleQuoteIndex]) { continue; }
-                            if ('\\' != commandLine[lastDoubleQuoteIndex - 1]) { break; }
+                            if ('"' != commandLine[lastDoubleQuoteIndex])
+                            {
+                                continue;
+                            }
+
+                            if ('\\' != commandLine[lastDoubleQuoteIndex - 1])
+                            {
+                                break;
+                            }
                         }
-                        if (lastDoubleQuoteIndex >= commandLineLength) { return; }
+
+                        if (lastDoubleQuoteIndex >= commandLineLength)
+                        {
+                            return;
+                        }
+
                         candidateFilePath = commandLine.Substring(1, lastDoubleQuoteIndex - 1);
                     }
                     else
@@ -112,18 +134,33 @@ namespace Cosmos.Build.Common
                         int firstSeparatorIndex = 0;
                         for (; firstSeparatorIndex < commandLineLength; firstSeparatorIndex++)
                         {
-                            if (Char.IsSeparator(commandLine[firstSeparatorIndex])) { break; }
+                            if (Char.IsSeparator(commandLine[firstSeparatorIndex]))
+                            {
+                                break;
+                            }
                         }
-                        if (firstSeparatorIndex >= commandLineLength) { return; }
+
+                        if (firstSeparatorIndex >= commandLineLength)
+                        {
+                            return;
+                        }
+
                         candidateFilePath = commandLine.Substring(0, firstSeparatorIndex);
                     }
-                    if (!File.Exists(candidateFilePath)) { return; }
-                    BochsExe = new FileInfo(candidateFilePath);
-                    BochsDebugExe = new FileInfo(Path.Combine(BochsExe.Directory.FullName, "bochsdbg.exe"));
+                }
+
+                if (!File.Exists(candidateFilePath))
+                {
                     return;
                 }
+
+                BochsExe = new FileInfo(candidateFilePath);
+                BochsDebugExe = new FileInfo(Path.Combine(BochsExe.Directory.FullName, "bochsdbg.exe"));
             }
-            catch { return; }
+            catch
+            {
+                return;
+            }
         }
     }
 }
