@@ -88,64 +88,65 @@ namespace Cosmos.Build.Common
                 string candidateFilePath = Environment.GetEnvironmentVariable("BochsPath");
                 if (string.IsNullOrWhiteSpace(candidateFilePath))
                 {
-                    using var runCommandRegistryKey =
-                        Registry.ClassesRoot.OpenSubKey(@"BochsConfigFile\shell\Run\command", false);
-                    if (null == runCommandRegistryKey)
+                    using (var runCommandRegistryKey = Registry.ClassesRoot.OpenSubKey(@"BochsConfigFile\shell\Run\command", false))
                     {
-                        return;
-                    }
-
-                    string commandLine = (string) runCommandRegistryKey.GetValue(null, null);
-                    commandLine = commandLine?.Trim();
-                    if (String.IsNullOrEmpty(commandLine))
-                    {
-                        return;
-                    }
-
-                    // Now perform some parsing on command line to discover full exe path.
-                    int commandLineLength = commandLine.Length;
-                    if ('"' == commandLine[0])
-                    {
-                        // Seek for a non escaped double quote.
-                        int lastDoubleQuoteIndex = 1;
-                        for (; lastDoubleQuoteIndex < commandLineLength; lastDoubleQuoteIndex++)
-                        {
-                            if ('"' != commandLine[lastDoubleQuoteIndex])
-                            {
-                                continue;
-                            }
-
-                            if ('\\' != commandLine[lastDoubleQuoteIndex - 1])
-                            {
-                                break;
-                            }
-                        }
-
-                        if (lastDoubleQuoteIndex >= commandLineLength)
+                        if (null == runCommandRegistryKey)
                         {
                             return;
                         }
 
-                        candidateFilePath = commandLine.Substring(1, lastDoubleQuoteIndex - 1);
-                    }
-                    else
-                    {
-                        // Seek for first separator character.
-                        int firstSeparatorIndex = 0;
-                        for (; firstSeparatorIndex < commandLineLength; firstSeparatorIndex++)
-                        {
-                            if (Char.IsSeparator(commandLine[firstSeparatorIndex]))
-                            {
-                                break;
-                            }
-                        }
-
-                        if (firstSeparatorIndex >= commandLineLength)
+                        string commandLine = (string) runCommandRegistryKey.GetValue(null, null);
+                        commandLine = commandLine?.Trim();
+                        if (String.IsNullOrEmpty(commandLine))
                         {
                             return;
                         }
 
-                        candidateFilePath = commandLine.Substring(0, firstSeparatorIndex);
+                        // Now perform some parsing on command line to discover full exe path.
+                        int commandLineLength = commandLine.Length;
+                        if ('"' == commandLine[0])
+                        {
+                            // Seek for a non escaped double quote.
+                            int lastDoubleQuoteIndex = 1;
+                            for (; lastDoubleQuoteIndex < commandLineLength; lastDoubleQuoteIndex++)
+                            {
+                                if ('"' != commandLine[lastDoubleQuoteIndex])
+                                {
+                                    continue;
+                                }
+
+                                if ('\\' != commandLine[lastDoubleQuoteIndex - 1])
+                                {
+                                    break;
+                                }
+                            }
+
+                            if (lastDoubleQuoteIndex >= commandLineLength)
+                            {
+                                return;
+                            }
+
+                            candidateFilePath = commandLine.Substring(1, lastDoubleQuoteIndex - 1);
+                        }
+                        else
+                        {
+                            // Seek for first separator character.
+                            int firstSeparatorIndex = 0;
+                            for (; firstSeparatorIndex < commandLineLength; firstSeparatorIndex++)
+                            {
+                                if (Char.IsSeparator(commandLine[firstSeparatorIndex]))
+                                {
+                                    break;
+                                }
+                            }
+
+                            if (firstSeparatorIndex >= commandLineLength)
+                            {
+                                return;
+                            }
+
+                            candidateFilePath = commandLine.Substring(0, firstSeparatorIndex);
+                        }
                     }
                 }
 
