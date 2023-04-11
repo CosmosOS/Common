@@ -26,13 +26,14 @@ namespace Cosmos.Build.Common
                 "-relaxed-filenames" +
                 " -J -R" +
                 " -o " + Quote(isoFilename) +
+                " -b boot/grub/i386-pc/eltorito.img" +
                 " -no-emul-boot" +
                 " -boot-load-size 4" +
                 " -boot-info-table " +
                 Quote(isoDirectory);
 
             var output = ProcessExtension.LaunchApplication(
-                Path.Combine(Path.Combine(CosmosPaths.Tools, "xorriso"), "xorriso.exe"),
+                Path.Combine(Path.Combine(CosmosPaths.Tools, "mkisofs"), "mkisofs.exe"),
                 arg,
                 true
             );
