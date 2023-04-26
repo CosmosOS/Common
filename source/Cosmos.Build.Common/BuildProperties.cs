@@ -209,136 +209,70 @@ namespace Cosmos.Build.Common
         // Launch
         public LaunchType Launch
         {
-            get
-            {
-                return GetProperty(BuildPropertyNames.LaunchString, LaunchType.VMware);
-            }
-            set
-            {
-                SetProperty(BuildPropertyNames.LaunchString, value);
-            }
+            get => GetProperty(BuildPropertyNames.LaunchString, LaunchType.VMware);
+            set => SetProperty(BuildPropertyNames.LaunchString, value);
         }
 
         public bool ShowLaunchConsole
         {
-            get
-            {
-                return GetProperty(BuildPropertyNames.ShowLaunchConsoleString, false);
-            }
-            set
-            {
-                SetProperty(BuildPropertyNames.ShowLaunchConsoleString, value);
-            }
+            get => GetProperty(BuildPropertyNames.ShowLaunchConsoleString, false);
+            set => SetProperty(BuildPropertyNames.ShowLaunchConsoleString, value);
         }
 
         // Debug
         public bool DebugEnabled
         {
-            get
-            {
-                return GetProperty(BuildPropertyNames.DebugEnabledString, true);
-            }
-            set
-            {
-                SetProperty(BuildPropertyNames.DebugEnabledString, value);
-            }
+            get => GetProperty(BuildPropertyNames.DebugEnabledString, true);
+            set => SetProperty(BuildPropertyNames.DebugEnabledString, value);
         }
 
         public bool StackCorruptionDetectionEnabled
         {
-            get
-            {
-                return GetProperty(BuildPropertyNames.StackCorruptionDetectionEnabledString, true);
-            }
-            set
-            {
-                SetProperty(BuildPropertyNames.StackCorruptionDetectionEnabledString, value);
-            }
+            get => GetProperty(BuildPropertyNames.StackCorruptionDetectionEnabledString, true);
+            set => SetProperty(BuildPropertyNames.StackCorruptionDetectionEnabledString, value);
         }
 
         public StackCorruptionDetectionLevel StackCorruptionDetectionLevel
         {
-            get
-            {
-                return GetProperty(BuildPropertyNames.StackCorruptionDetectionLevelString, StackCorruptionDetectionLevel.MethodFooters);
-            }
-            set
-            {
-                SetProperty(BuildPropertyNames.StackCorruptionDetectionLevelString, value);
-            }
+            get => GetProperty(BuildPropertyNames.StackCorruptionDetectionLevelString, StackCorruptionDetectionLevel.MethodFooters);
+            set => SetProperty(BuildPropertyNames.StackCorruptionDetectionLevelString, value);
         }
 
         public DebugMode DebugMode
         {
-            get
-            {
-                return GetProperty(BuildPropertyNames.DebugModeString, DebugMode.Source);
-            }
-            set
-            {
-                SetProperty(BuildPropertyNames.DebugModeString, value);
-            }
+            get => GetProperty(BuildPropertyNames.DebugModeString, DebugMode.Source);
+            set => SetProperty(BuildPropertyNames.DebugModeString, value);
         }
 
         public bool IgnoreDebugStubAttribute
         {
-            get
-            {
-                return GetProperty(BuildPropertyNames.IgnoreDebugStubAttributeString, false);
-            }
-            set
-            {
-                SetProperty(BuildPropertyNames.IgnoreDebugStubAttributeString, value);
-            }
+            get => GetProperty(BuildPropertyNames.IgnoreDebugStubAttributeString, false);
+            set => SetProperty(BuildPropertyNames.IgnoreDebugStubAttributeString, value);
         }
 
         public string CosmosDebugPort
         {
-            get
-            {
-                return GetProperty(BuildPropertyNames.CosmosDebugPortString, "Serial: COM1");
-            }
-            set
-            {
-                SetProperty(BuildPropertyNames.CosmosDebugPortString, value);
-            }
+            get => GetProperty(BuildPropertyNames.CosmosDebugPortString, "Serial: COM1");
+            set => SetProperty(BuildPropertyNames.CosmosDebugPortString, value);
         }
 
         public string VisualStudioDebugPort
         {
-            get
-            {
-                return GetProperty(BuildPropertyNames.VisualStudioDebugPortString, "Serial: COM1");
-            }
-            set
-            {
-                SetProperty(BuildPropertyNames.VisualStudioDebugPortString, value);
-            }
+            get => GetProperty(BuildPropertyNames.VisualStudioDebugPortString, "Serial: COM1");
+            set => SetProperty(BuildPropertyNames.VisualStudioDebugPortString, value);
         }
 
         // PXE
         public string PxeInterface
         {
-            get
-            {
-                return GetProperty(BuildPropertyNames.PxeInterfaceString, "");
-            }
-            set
-            {
-                SetProperty(BuildPropertyNames.PxeInterfaceString, value);
-            }
+            get => GetProperty(BuildPropertyNames.PxeInterfaceString, "");
+            set => SetProperty(BuildPropertyNames.PxeInterfaceString, value);
         }
 
         public string SlavePort
         {
-            get
-            {
-                return GetProperty(BuildPropertyNames.SlavePortString, "None");
-            }
-            set
-            {
-                SetProperty(BuildPropertyNames.SlavePortString, value);
-            }
+            get => GetProperty(BuildPropertyNames.SlavePortString, "None");
+            set => SetProperty(BuildPropertyNames.SlavePortString, value);
         }
 
         // Bochs
@@ -348,28 +282,16 @@ namespace Cosmos.Build.Common
 
         public string BochsEmulatorConfigurationFile
         {
-            get
-            {
-                return GetProperty(
+            get => GetProperty(
                     BochsEmulatorConfigurationFileString,
                     Path.Combine(OutputPath + BochsDefaultConfigurationFileName));
-            }
-            set
-            {
-                SetProperty(BochsEmulatorConfigurationFileString, value);
-            }
+            set => SetProperty(BochsEmulatorConfigurationFileString, value);
         }
 
         public bool EnableBochsDebug
         {
-            get
-            {
-                return GetProperty(BuildPropertyNames.EnableBochsDebugString, false);
-            }
-            set
-            {
-                SetProperty(BuildPropertyNames.EnableBochsDebugString, value);
-            }
+            get => GetProperty(BuildPropertyNames.EnableBochsDebugString, false);
+            set => SetProperty(BuildPropertyNames.EnableBochsDebugString, value);
         }
 
         public bool StartBochsDebugGui

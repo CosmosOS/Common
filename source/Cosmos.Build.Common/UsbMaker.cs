@@ -25,9 +25,11 @@ namespace Cosmos.Build.Common
             //   - syslinux-4.05\win\syslinux.c - has source we need.
             //   - http://www.fort-awesome.net/blog/2010/03/25/MBR_VBR_and_Raw_Disk
             //
-            var xPSI = new ProcessStartInfo(Path.Combine(CosmosPaths.Tools, "syslinux.exe"), "-fma " + aDrive + ":");
-            xPSI.UseShellExecute = false;
-            xPSI.CreateNoWindow = true;
+            ProcessStartInfo xPSI = new(Path.Combine(CosmosPaths.Tools, "syslinux.exe"), "-fma " + aDrive + ":")
+            {
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
             Process.Start(xPSI);
         }
     }

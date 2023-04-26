@@ -80,8 +80,7 @@ namespace Cosmos.Build.Common
         /// <param name="name">Get name of the property.</param>
         /// <param name="default">Default value for the proeprty.</param>
         /// <returns>Value of the property with given name.</returns>
-        public T GetProperty<T>(string name, T @default)
-            where T : struct
+        public T GetProperty<T>(string name, T @default) where T : struct
         {
             T value = @default;
             if (mPropTable.ContainsKey(name) == true)
@@ -96,51 +95,58 @@ namespace Cosmos.Build.Common
                 }
                 else
                 {
-                    if ((valueTypeName == "Int16") || (valueTypeName == "Short"))
+                    switch (valueTypeName)
                     {
-                        Int16 newValue;
-                        if (Int16.TryParse(stringValue, out newValue) == true) { value = (T)((Object)newValue); }
-
-                    }
-                    else if ((valueTypeName == "Int32") || (valueTypeName == "Integer"))
-                    {
-                        Int32 newValue;
-                        if (Int32.TryParse(stringValue, out newValue) == true) { value = (T)((Object)newValue); }
-
-                    }
-                    else if ((valueTypeName == "Int64") || (valueTypeName == "Long"))
-                    {
-                        Int32 newValue;
-                        if (Int32.TryParse(stringValue, out newValue) == true) { value = (T)((Object)newValue); }
-
-                    }
-                    else if (valueTypeName == "Boolean")
-                    {
-                        Boolean newValue;
-                        if (Boolean.TryParse(stringValue, out newValue) == true) { value = (T)((Object)newValue); }
-
-                    }
-                    else if ((valueTypeName == "UInt16") || (valueTypeName == "UShort"))
-                    {
-                        UInt16 newValue;
-                        if (UInt16.TryParse(stringValue, out newValue) == true) { value = (T)((Object)newValue); }
-
-                    }
-                    else if ((valueTypeName == "UInt32") || (valueTypeName == "UInteger"))
-                    {
-                        UInt32 newValue;
-                        if (UInt32.TryParse(stringValue, out newValue) == true) { value = (T)((Object)newValue); }
-
-                    }
-                    else if ((valueTypeName == "UInt64") || (valueTypeName == "ULong"))
-                    {
-                        UInt64 newValue;
-                        if (UInt64.TryParse(stringValue, out newValue) == true) { value = (T)((Object)newValue); }
-
-                    }
-                    else
-                    {
-                        throw new ArgumentException("Unsupported value type.", "T");
+                        case "Short":
+                        case "Int16":
+                            if (short.TryParse(stringValue, out short newValueShort))
+                            {
+                                value = (T)(object)newValueShort;
+                            }
+                            break;
+                        case "Integer":
+                        case "Int32":
+                            if (int.TryParse(stringValue, out int newValueInt))
+                            {
+                                value = (T)(object)newValueInt;
+                            }
+                            break;
+                        case "Long":
+                        case "Int64":
+                            if (long.TryParse(stringValue, out long newValueLong))
+                            {
+                                value = (T)(object)newValueLong;
+                            }
+                            break;
+                        case "Boolean":
+                            if (bool.TryParse(stringValue, out bool newValueBool))
+                            {
+                                value = (T)(object)newValueBool;
+                            }
+                            break;
+                        case "UShort":
+                        case "UInt16":
+                            if (ushort.TryParse(stringValue, out ushort newValueUShort))
+                            {
+                                value = (T)(object)newValueUShort;
+                            }
+                            break;
+                        case "UInteger":
+                        case "UInt32":
+                            if (uint.TryParse(stringValue, out uint newValueUInt) == true)
+                            {
+                                value = (T)(object)newValueUInt;
+                            }
+                            break;
+                        case "ULong":
+                        case "UInt64":
+                            if (ulong.TryParse(stringValue, out ulong newValueULong) == true)
+                            {
+                                value = (T)(object)newValueULong;
+                            }
+                            break;
+                        default:
+                            throw new ArgumentException("Unsupported value type.", nameof(T));
                     }
                 }
             }
