@@ -23,20 +23,22 @@ namespace Cosmos.Build.Common
             File.Copy(imageFile, Path.Combine(isoDirectory + "/boot/", "Cosmos.bin"));
 
             string arg =
+                "-as mkisofs " +
                 "-relaxed-filenames" +
                 " -J -R" +
                 " -o " + Quote(isoFilename) +
-                " -b boot/grub/i386-pc/eltorito.img" +
+                " -b boot/limine/limine-cd.bin " +
                 " -no-emul-boot" +
                 " -boot-load-size 4" +
                 " -boot-info-table " +
-                Quote(isoDirectory);
+                Quote(isoDirectory.Substring(Directory.GetCurrentDirectory().Length));
 
             var output = ProcessExtension.LaunchApplication(
-                Path.Combine(Path.Combine(CosmosPaths.Tools, "mkisofs"), "mkisofs.exe"),
+                Path.Combine(Path.Combine(CosmosPaths.Tools, "xorriso"), "xorriso.exe"),
                 arg,
                 true
             );
+
 
             return output;
         }
