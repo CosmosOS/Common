@@ -27,7 +27,7 @@ namespace Cosmos.Build.Common
                 "-relaxed-filenames" +
                 " -J -R" +
                 " -o " + Quote(isoFilename) +
-                " -b boot/limine/limine-cd.bin " +
+                " -b boot/limine/limine-bios-cd.bin" +
                 " -no-emul-boot" +
                 " -boot-load-size 4" +
                 " -boot-info-table " +
